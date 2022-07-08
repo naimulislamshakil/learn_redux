@@ -22,13 +22,19 @@ const initUserState = {
 //   1. type,
 //   2.Payload
 
-const incressAction = () => {
+const incressAction = (number) => {
   // You can Decleare a variable and store INCREMENT.
   // Follow 2 number line.
-  return { type: Increment };
+  return {
+    type: Increment,
+    payload: number,
+  };
 };
-const decressAction = () => {
+const decressAction = (number) => {
   // You can Decleare a variable and store DECREMENT.
   // Follow 3 number line.
-  return { type: Decrement };
+  return {
+    type: Decrement,
+    payload: number,
+  };
 };
