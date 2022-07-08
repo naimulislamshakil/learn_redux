@@ -27,7 +27,6 @@ const incressAction = (number) => {
   // Follow 2 number line.
   return {
     type: Increment,
-    payload: number,
   };
 };
 const decressAction = (number) => {
@@ -35,6 +34,24 @@ const decressAction = (number) => {
   // Follow 3 number line.
   return {
     type: Decrement,
-    payload: number,
   };
+};
+
+// Create a Reducers for counter
+const counterReducer = (state, action) => {
+  switch (action.type) {
+    case Increment:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    case Decrement:
+      return {
+        ...state,
+        count: state.count - 1,
+      };
+
+    default:
+      state.count;
+  }
 };
