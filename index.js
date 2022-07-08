@@ -2,6 +2,8 @@
 const Increment = "INCREMENT";
 const Decrement = "DECREMENT";
 
+const { createStore } = require("redux");
+
 // state
 // How to decleare a redux state?
 const initCounterState = {
@@ -22,7 +24,7 @@ const initUserState = {
 //   1. type,
 //   2.Payload
 
-const incressAction = (number) => {
+const incressAction = () => {
   // You can Decleare a variable and store INCREMENT.
   // Follow 2 number line.
   return {
@@ -55,3 +57,13 @@ const counterReducer = (state, action) => {
       state.count;
   }
 };
+
+// create store
+const store = createStore(counterReducer);
+
+store.subscribe(() => {
+  console.log(store.getstate());
+});
+
+// dispatcs action
+store.dispatch(incressAction());
