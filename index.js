@@ -31,7 +31,7 @@ const incressAction = () => {
     type: Increment,
   };
 };
-const decressAction = (number) => {
+const decressAction = () => {
   // You can Decleare a variable and store DECREMENT.
   // Follow 3 number line.
   return {
@@ -40,7 +40,7 @@ const decressAction = (number) => {
 };
 
 // Create a Reducers for counter
-const counterReducer = (state, action) => {
+const counterReducer = (state = initCounterState, action) => {
   switch (action.type) {
     case Increment:
       return {
@@ -54,7 +54,7 @@ const counterReducer = (state, action) => {
       };
 
     default:
-      state.count;
+      state;
   }
 };
 
@@ -62,7 +62,7 @@ const counterReducer = (state, action) => {
 const store = createStore(counterReducer);
 
 store.subscribe(() => {
-  console.log(store.getstate());
+  console.log(store.getState());
 });
 
 // dispatcs action
